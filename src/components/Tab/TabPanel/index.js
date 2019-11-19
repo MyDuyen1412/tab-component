@@ -5,7 +5,7 @@ import styles from './style.module.css'
 
 const TabPanel = ({ children, className, ...props }) => {
   return (
-    <div {...props} className={classnames(className)}>
+    <div {...props} className={classnames(className, 'tab__panel')}>
       {children}
     </div>
   );
