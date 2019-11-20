@@ -1,14 +1,20 @@
-import React, { useContext } from "react";
 import classnames from "classnames";
-import Context from "../../../context/Context.js";
-import styles from './style.module.css'
+import React from "react";
 
-const TabPanel = ({ children, className, ...props }) => {
+const TabPanel = ({ children, active, title, accordion, className, ...props }) => {
   return (
-    <div {...props} className={classnames(className, 'tab__panel')}>
-      {children}
+    <div className='tab__panel__container' {...props}>
+      {accordion && title}
+      <div
+        className={classnames(className, "tab__panel", {
+          "tab__panel-active": active
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 };
+
 
 export default TabPanel;

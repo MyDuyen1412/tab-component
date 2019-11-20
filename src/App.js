@@ -1,15 +1,16 @@
 import React from "react";
 import Tab from "./components/Tab";
 import TabList from "./components/Tab/TabList";
-import TabContent from './components/Tab/TabContent';
+import TabContent from "./components/Tab/TabContent";
 import TabPanel from "./components/Tab/TabPanel";
 import TabItem from "./components/Tab/TabItem";
+import userIcon from "../src/assets/user.png";
 
 function App() {
   return (
-    <Tab top defaultactive={1}>
+    <Tab accordion>
       <TabList>
-        <TabItem>Nunc tincidunt</TabItem>
+        <TabItem icon={userIcon}>Nunc tincidunt</TabItem>
         <TabItem>Proin dolor</TabItem>
         <TabItem disable>Aenean lacinia</TabItem>
       </TabList>
