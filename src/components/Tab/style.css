@@ -87,13 +87,12 @@
 
 .tab__item {
   padding: 8px 12px;
+  cursor: pointer;
 }
-
 
 .tab__item img + .tab__item__title {
   padding-left: 10px;
 }
-
 
 .tab__panel {
   display: none;
@@ -111,17 +110,16 @@
   width: 100%;
 }
 
-.tab-accordion .tab__panel__container .tab__item {
+.tab-accordion .tab__item {
   border: 1px solid #ccc;
   margin-bottom: 5px;
-  cursor: pointer;
   display: block;
   font-weight: bold;
   padding: 1rem;
   position: relative;
 }
 
-.tab-accordion .tab__panel__container .tab__item::before {
+/* .tab-accordion .tab__panel__container .tab__item::before {
   content: "";
   background: url("../../assets/arrow-down.png") no-repeat;
   width: 18px;
@@ -142,18 +140,30 @@
   top: 1rem;
   transform: rotate(180deg);
   transition: transform 0.3s ease-in-out;
-}
+} */
 
-.tab-accordion .tab__panel__container .tab__item-active {
+.tab-accordion .tab__item-active {
   background: #444;
   color: #fff;
 }
 
-.tab-accordion .tab__panel__container .tab__panel {
+.tab-accordion .tab__panel {
   height: 0;
 }
-.tab-accordion .tab__panel__container .tab__panel.tab__panel-active {
+.tab-accordion .tab__panel-active {
   animation: fadeIn 0.3s forwards;
+}
+
+.tab__icon {
+  padding-right: 10px;
+}
+
+.tab__icon > * {
+  transform: rotate(0deg);  
+}
+
+.tab__item-active .tab__icon__rotate > * {
+  animation: rotate 0.3s forwards;
 }
 
 @keyframes fadeIn {
@@ -163,5 +173,14 @@
   }
   to {
     height: 100px;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
   }
 }

@@ -7,7 +7,7 @@ function Tab({
   children,
   defaultactive = 0,
   className,
-  top,
+  top = true,
   bottom,
   left,
   right,
